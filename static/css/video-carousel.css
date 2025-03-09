@@ -1,41 +1,137 @@
 /* 视频控制按钮样式 */
 #video-controls {
-  margin: 1.5rem 0;
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 #prev-folder, #next-folder {
-  background-color: #3273dc;
-  transition: opacity 0.3s ease;
+  background-color: #4a89dc;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(74, 137, 220, 0.3);
 }
 
 #prev-folder:hover, #next-folder:hover {
-  opacity: 0.9;
+  background-color: #3a70c2;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 137, 220, 0.5);
+}
+
+#prev-folder:active, #next-folder:active {
+  transform: translateY(0);
 }
 
 #folder-name {
-  color: #4a4a4a;
-  vertical-align: middle;
+  color: #363636;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background-color: #f5f7fa;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 /* 视频容器布局 */
 .large-video {
-  margin: 2rem auto;
+  margin: 3rem auto;
   max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.large-video:hover {
+  transform: translateY(-5px);
+}
+
+.large-video video {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.large-video h3 {
+  background: linear-gradient(135deg, #4a89dc, #5d9cec);
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .video-grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: 2rem;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 3rem;
+}
+
+.video-group {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.video-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.video-group h3 {
+  background: linear-gradient(135deg, #5d9cec, #4fc1e9);
+  color: white;
+  padding: 0.8rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
 }
 
 .video-group video {
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  width: 100%;
+  display: block;
+  border-radius: 0 0 8px 8px;
 }
 
-.video-group video:hover {
-  transform: scale(1.02);
+/* 视频画廊标题样式 */
+.container h2.title.is-3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.container h2.title.is-3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #4a89dc, #5d9cec);
+  border-radius: 2px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #video-controls {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  #folder-name {
+    margin-top: 0.8rem;
+  }
 }

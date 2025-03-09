@@ -132,22 +132,34 @@ Our code is provided in the supplementary materials and will be made publicly av
 
 
 <!-- 修改后的视频轮播部分 -->
-<section class="hero is-small">
+<section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Video Gallery</h2>
+      <h2 class="title is-3">视频画廊</h2>
 
       <!-- 添加的切换控制 -->
-      <div id="video-controls" class="has-text-centered mb-5">
-        <button class="button is-primary" id="prev-folder">← Previous</button>
-        <button class="button is-primary" id="next-folder">Next →</button>
-        <span id="folder-name" class="ml-3 has-text-weight-semibold"></span>
+      <div id="video-controls">
+        <button class="button" id="prev-folder">
+          <span class="icon">
+            <i class="fas fa-arrow-left"></i>
+          </span>
+          <span>上一个场景</span>
+        </button>
+
+        <span id="folder-name" class="has-text-weight-semibold"></span>
+
+        <button class="button" id="next-folder">
+          <span>下一个场景</span>
+          <span class="icon">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+        </button>
       </div>
 
       <!-- 大视频 -->
       <div class="large-video">
         <h3 class="title is-4">TaylorSeer</h3>
-        <video poster="" id="large-video" controls muted loop>
+        <video poster="" id="large-video" controls autoplay muted loop>
           <source data-filename="TaylorSeer.mp4"
                   src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
                   type="video/mp4">
@@ -158,7 +170,7 @@ Our code is provided in the supplementary materials and will be made publicly av
       <div class="video-grid">
         <!-- 每个视频组添加data-filename属性 -->
         <div class="video-group">
-          <h3 class="title is-4">22%Step</h3>
+          <h3 class="title is-5">22%Step</h3>
           <video poster="" class="grid-video" controls muted loop>
             <source data-filename="11steps.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4"
@@ -166,7 +178,7 @@ Our code is provided in the supplementary materials and will be made publicly av
           </video>
         </div>
         <div class="video-group">
-          <h3 class="title is-4">FORA</h3>
+          <h3 class="title is-5">FORA</h3>
           <video poster="" class="grid-video" controls muted loop>
             <source data-filename="FORA.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4"
@@ -174,7 +186,7 @@ Our code is provided in the supplementary materials and will be made publicly av
           </video>
         </div>
         <div class="video-group">
-          <h3 class="title is-4">ToCa</h3>
+          <h3 class="title is-5">ToCa</h3>
           <video poster="" class="grid-video" controls muted loop>
             <source data-filename="ToCa.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4"
@@ -182,7 +194,7 @@ Our code is provided in the supplementary materials and will be made publicly av
           </video>
         </div>
         <div class="video-group">
-          <h3 class="title is-4">DuCa</h3>
+          <h3 class="title is-5">DuCa</h3>
           <video poster="" class="grid-video" controls muted loop>
             <source data-filename="DuCa.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4"
@@ -194,13 +206,6 @@ Our code is provided in the supplementary materials and will be made publicly av
   </div>
 </section>
 
-
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
 
   </body>
   </html>
