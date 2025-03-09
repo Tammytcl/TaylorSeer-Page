@@ -130,48 +130,35 @@ Our code is provided in the supplementary materials and will be made publicly av
 
 
 
-
 <!-- 修改后的视频轮播部分 -->
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">视频画廊</h2>
+      <h2 class="title is-3 has-text-centered">视频画廊</h2> <!-- 居中标题 -->
 
-      <!-- 添加的切换控制 -->
-      <div id="video-controls">
-        <button class="button" id="prev-folder">
-          <span class="icon">
-            <i class="fas fa-chevron-left"></i>
-          </span>
-        </button>
-
-        <span id="folder-name" class="has-text-weight-semibold"></span>
-
-        <button class="button" id="next-folder">
-          <span class="icon">
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        </button>
+      <!-- 居中场景名称 -->
+      <div class="has-text-centered mb-5">
+        <span id="folder-name" class="title is-5 has-text-weight-semibold"></span>
       </div>
 
-      <!-- 居中大视频容器 -->
-      <div class="taylor-seer-container">
-        <div class="large-video">
-          <h3 class="title is-4" style="background: #666; border-radius: 8px 8px 0 0;">TaylorSeer</h3>
-          <video poster="" id="large-video" controls autoplay muted loop>
-            <source data-filename="TaylorSeer.mp4"
-                    src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+      <!-- 大视频 -->
+      <div class="large-video">
+        <h3 class="title is-4 has-text-centered">TaylorSeer</h3> <!-- 居中标题 -->
+        <video poster="" id="large-video" controls autoplay muted> <!-- 移除loop属性 -->
+          <source data-filename="TaylorSeer.mp4"
+                  src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
+                  type="video/mp4">
+        </video>
       </div>
+
+
 
       <!-- 小视频网格 -->
       <div class="video-grid">
         <!-- 每个视频组添加data-filename属性 -->
         <div class="video-group">
           <h3 class="title is-5">22%Step</h3>
-          <video poster="" class="grid-video" controls muted loop>
+          <video poster="" class="grid-video" controls muted>
             <source data-filename="11steps.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4"
                     type="video/mp4">
@@ -179,7 +166,7 @@ Our code is provided in the supplementary materials and will be made publicly av
         </div>
         <div class="video-group">
           <h3 class="title is-5">FORA</h3>
-          <video poster="" class="grid-video" controls muted loop>
+          <video poster="" class="grid-video" controls muted>
             <source data-filename="FORA.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4"
                     type="video/mp4">
@@ -187,7 +174,7 @@ Our code is provided in the supplementary materials and will be made publicly av
         </div>
         <div class="video-group">
           <h3 class="title is-5">ToCa</h3>
-          <video poster="" class="grid-video" controls muted loop>
+          <video poster="" class="grid-video" controls muted>
             <source data-filename="ToCa.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4"
                     type="video/mp4">
@@ -195,7 +182,7 @@ Our code is provided in the supplementary materials and will be made publicly av
         </div>
         <div class="video-group">
           <h3 class="title is-5">DuCa</h3>
-          <video poster="" class="grid-video" controls muted loop>
+          <video poster="" class="grid-video" controls muted>
             <source data-filename="DuCa.mp4"
                     src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4"
                     type="video/mp4">
