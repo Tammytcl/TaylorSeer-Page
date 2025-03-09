@@ -184,10 +184,60 @@ Our code is provided in the supplementary materials and will be made publicly av
   </div>
 </section>
 
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Gallery</h2>
+
+      <!-- Large Video -->
+      <div class="large-video">
+        <h3 class="title is-4">TaylorSeer</h3>
+        <video poster="" id="large-video" autoplay controls muted loop>
+          <source src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Grid of 4 Small Videos -->
+      <div class="video-grid">
+        <!-- Video Group 1 -->
+        <div class="video-group">
+          <h3 class="title is-4">22%Step</h3>
+          <video poster="" id="22%Step" autoplay controls muted loop>
+            <source src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Video Group 2 -->
+        <div class="video-group">
+          <h3 class="title is-4">FORA</h3>
+          <video poster="" id="FORA" autoplay controls muted loop>
+            <source src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Video Group 3 -->
+        <div class="video-group">
+          <h3 class="title is-4">ToCa</h3>
+          <video poster="" id="ToCa" autoplay controls muted loop>
+            <source src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Video Group 4 -->
+        <div class="video-group">
+          <h3 class="title is-4">DuCa</h3>
+          <video poster="" id="DuCa" autoplay controls muted loop>
+            <source src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
   /* Styling for the large video */
   .large-video {
     margin-bottom: 40px; /* Space between large video and grid */
+    text-align: center; /* Center the video */
   }
 
   .large-video h3 {
@@ -195,8 +245,11 @@ Our code is provided in the supplementary materials and will be made publicly av
   }
 
   .large-video video {
-    width: 100%; /* Full width */
-    max-width: 100%; /* Ensure video doesn't overflow */
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure video is centered */
+    margin: 0 auto; /* Center the video horizontally */
   }
 
   /* Grid layout for the small video groups */
@@ -221,9 +274,9 @@ Our code is provided in the supplementary materials and will be made publicly av
   .video-group video {
     width: 100%; /* Make video fill the container */
     max-width: 100%; /* Ensure video doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
   }
 </style>
-
 
 
 
