@@ -4,6 +4,198 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1.5rem;
+}
+
+/* 简约箭头按钮样式 */
+#prev-folder, #next-folder {
+  background: none;
+  color: #363636;
+  font-size: 1.5rem;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+#prev-folder:hover, #next-folder:hover {
+  color: #4a89dc;
+  transform: scale(1.2);
+}
+
+#prev-folder:active, #next-folder:active {
+  transform: scale(1);
+}
+
+#folder-name {
+  color: #363636;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  background-color: #f5f7fa;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 1.1rem;
+}
+
+/* 视频容器布局 */
+/* 主要视频布局 - 居中放置 */
+.taylor-seer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+}
+
+.large-video {
+  width: 70%;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+  background: white;
+}
+
+.large-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.large-video video {
+  width: 100%;
+  display: block;
+}
+
+.large-video h3 {
+  background: linear-gradient(135deg, #4a89dc, #5d9cec);
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* 视频网格布局 */
+.video-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 3rem auto;
+  max-width: 90%;
+}
+
+.video-group {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  background-color: white;
+  position: relative;
+}
+
+.video-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.video-group h3 {
+  background: linear-gradient(135deg, #5d9cec, #4fc1e9);
+  color: white;
+  padding: 0.8rem;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.video-group h3:after {
+  content: attr(data-speed);
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.video-group video {
+  width: 100%;
+  display: block;
+  border-radius: 0 0 8px 8px;
+}
+
+/* 添加现代感悬停效果 */
+.video-group:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(74, 137, 220, 0.05);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-group:hover:before {
+  opacity: 1;
+}
+
+/* 视频画廊标题样式 */
+.container h2.title.is-3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.container h2.title.is-3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #4a89dc, #5d9cec);
+  border-radius: 2px;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #video-controls {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  #folder-name {
+    margin-top: 0.8rem;
+  }
+}
+
+/* 视频控制按钮样式 */
+#video-controls {
+  margin: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   position: relative;
 }
