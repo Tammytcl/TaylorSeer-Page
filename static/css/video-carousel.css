@@ -1,0 +1,41 @@
+/* 视频控制按钮样式 */
+#video-controls {
+  margin: 1.5rem 0;
+}
+
+#prev-folder, #next-folder {
+  background-color: #3273dc;
+  transition: opacity 0.3s ease;
+}
+
+#prev-folder:hover, #next-folder:hover {
+  opacity: 0.9;
+}
+
+#folder-name {
+  color: #4a4a4a;
+  vertical-align: middle;
+}
+
+/* 视频容器布局 */
+.large-video {
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.video-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+}
+
+.video-group video {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.video-group video:hover {
+  transform: scale(1.02);
+}

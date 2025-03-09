@@ -2,45 +2,43 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
   <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-
   <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
   <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <title>Academic Project Page</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
+  <!-- 添加视频切换功能的CSS -->
+  <link rel="stylesheet" href="static/css/video-carousel.css">
+
+  <!-- 原有样式 -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- 在head底部添加脚本 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
+  <!-- 添加视频切换功能的JS -->
+  <script src="static/js/video-carousel.js" defer></script>
+  <!-- 原有脚本 -->
   <script src="static/js/index.js"></script>
 </head>
 <body>
@@ -133,150 +131,68 @@ Our code is provided in the supplementary materials and will be made publicly av
 
 
 
-
-
-<!-- Video carousel -->
+<!-- 修改后的视频轮播部分 -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Video Gallery</h2>
 
-      <!-- Large Video -->
+      <!-- 添加的切换控制 -->
+      <div id="video-controls" class="has-text-centered mb-5">
+        <button class="button is-primary" id="prev-folder">← Previous</button>
+        <button class="button is-primary" id="next-folder">Next →</button>
+        <span id="folder-name" class="ml-3 has-text-weight-semibold"></span>
+      </div>
+
+      <!-- 大视频 -->
       <div class="large-video">
         <h3 class="title is-4">TaylorSeer</h3>
-        <video poster="" id="large-video" autoplay controls muted loop height="80%">
-          <source src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4" type="video/mp4">
+        <video poster="" id="large-video" controls muted loop>
+          <source data-filename="TaylorSeer.mp4"
+                  src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
+                  type="video/mp4">
         </video>
       </div>
 
-      <!-- Grid of 4 Small Videos -->
+      <!-- 小视频网格 -->
       <div class="video-grid">
-        <!-- Video Group 1 -->
+        <!-- 每个视频组添加data-filename属性 -->
         <div class="video-group">
           <h3 class="title is-4">22%Step</h3>
-          <video poster="" id="22%Step" autoplay controls muted loop height="100%">
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4" type="video/mp4">
+          <video poster="" class="grid-video" controls muted loop>
+            <source data-filename="11steps.mp4"
+                    src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4"
+                    type="video/mp4">
           </video>
         </div>
-        <!-- Video Group 2 -->
         <div class="video-group">
           <h3 class="title is-4">FORA</h3>
-          <video poster="" id="FORA" autoplay controls muted loop height="100%">
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4" type="video/mp4">
+          <video poster="" class="grid-video" controls muted loop>
+            <source data-filename="FORA.mp4"
+                    src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4"
+                    type="video/mp4">
           </video>
         </div>
-        <!-- Video Group 3 -->
         <div class="video-group">
           <h3 class="title is-4">ToCa</h3>
-          <video poster="" id="ToCa" autoplay controls muted loop height="100%">
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4" type="video/mp4">
+          <video poster="" class="grid-video" controls muted loop>
+            <source data-filename="ToCa.mp4"
+                    src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4"
+                    type="video/mp4">
           </video>
         </div>
-        <!-- Video Group 4 -->
         <div class="video-group">
           <h3 class="title is-4">DuCa</h3>
-          <video poster="" id="DuCa" autoplay controls muted loop height="100%">
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4" type="video/mp4">
+          <video poster="" class="grid-video" controls muted loop>
+            <source data-filename="DuCa.mp4"
+                    src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4"
+                    type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Gallery</h2>
-
-      <!-- Large Video -->
-      <div class="large-video">
-        <h3 class="title is-4">TaylorSeer</h3>
-        <video poster="" id="large-video" autoplay controls muted loop>
-          <source src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <!-- Grid of 4 Small Videos -->
-      <div class="video-grid">
-        <!-- Video Group 1 -->
-        <div class="video-group">
-          <h3 class="title is-4">22%Step</h3>
-          <video poster="" id="22%Step" autoplay controls muted loop>
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- Video Group 2 -->
-        <div class="video-group">
-          <h3 class="title is-4">FORA</h3>
-          <video poster="" id="FORA" autoplay controls muted loop>
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- Video Group 3 -->
-        <div class="video-group">
-          <h3 class="title is-4">ToCa</h3>
-          <video poster="" id="ToCa" autoplay controls muted loop>
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4" type="video/mp4">
-          </video>
-        </div>
-        <!-- Video Group 4 -->
-        <div class="video-group">
-          <h3 class="title is-4">DuCa</h3>
-          <video poster="" id="DuCa" autoplay controls muted loop>
-            <source src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  /* Styling for the large video */
-  .large-video {
-    margin-bottom: 40px; /* Space between large video and grid */
-    text-align: center; /* Center the video */
-  }
-
-  .large-video h3 {
-    margin-bottom: 10px; /* Space between title and video */
-  }
-
-  .large-video video {
-    width: 80%; /* Adjust width as needed */
-    max-width: 800px; /* Limit maximum width */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensure video is centered */
-    margin: 0 auto; /* Center the video horizontally */
-  }
-
-  /* Grid layout for the small video groups */
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, 1fr); /* 2 rows */
-    gap: 20px; /* Space between video groups */
-  }
-
-  /* Styling for each small video group */
-  .video-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .video-group h3 {
-    margin-bottom: 10px; /* Space between title and video */
-  }
-
-  .video-group video {
-    width: 100%; /* Make video fill the container */
-    max-width: 100%; /* Ensure video doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-  }
-</style>
 
 
 
