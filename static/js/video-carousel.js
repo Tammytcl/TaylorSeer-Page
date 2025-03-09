@@ -3,6 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const folders = [
     'a car stuck in traffic during rush hour',
     'a donut and a suitcase',
+      'a horse running to join a herd of its kind',
+      'a horse taking a peaceful walk',
+      'a knife on the left of a spoon, front view',
+      'a motorcycle on the left of a bus, front view',
+      'a motorcycle turning a corner',
+      'A person is arranging flowers',
+      'A person is playing flute',
+      'A robot DJ is playing',
+      'A tranquil tableau of a dining table',
+      'A tranquil tableau of restaurant',
+      'a truck and a bicycle',
+      'An astronaut flying in space, pan right',
+      'Clown fish swimming through the coral reef',
+      'tower',
   ];
 
   // 更友好的显示名称
@@ -82,12 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   };
 
-  // 添加切换动画
+// 修改后的按钮动画
   const animateButton = (button) => {
-    button.classList.add('is-loading');
+    button.style.transform = 'scale(0.9)';
     setTimeout(() => {
-      button.classList.remove('is-loading');
-    }, 300);
+      button.style.transform = 'scale(1)';
+    }, 150);
   };
 
   // 按钮事件监听

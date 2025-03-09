@@ -141,29 +141,29 @@ Our code is provided in the supplementary materials and will be made publicly av
       <div id="video-controls">
         <button class="button" id="prev-folder">
           <span class="icon">
-            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-chevron-left"></i>
           </span>
-          <span>上一个场景</span>
         </button>
 
         <span id="folder-name" class="has-text-weight-semibold"></span>
 
         <button class="button" id="next-folder">
-          <span>下一个场景</span>
           <span class="icon">
-            <i class="fas fa-arrow-right"></i>
+            <i class="fas fa-chevron-right"></i>
           </span>
         </button>
       </div>
 
-      <!-- 大视频 -->
-      <div class="large-video">
-        <h3 class="title is-4">TaylorSeer</h3>
-        <video poster="" id="large-video" controls autoplay muted loop>
-          <source data-filename="TaylorSeer.mp4"
-                  src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
-                  type="video/mp4">
-        </video>
+      <!-- 居中大视频容器 -->
+      <div class="taylor-seer-container">
+        <div class="large-video">
+          <h3 class="title is-4" style="background: #666; border-radius: 8px 8px 0 0;">TaylorSeer</h3>
+          <video poster="" id="large-video" controls autoplay muted loop>
+            <source data-filename="TaylorSeer.mp4"
+                    src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
       </div>
 
       <!-- 小视频网格 -->
