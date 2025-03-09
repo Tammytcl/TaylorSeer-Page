@@ -54,7 +54,7 @@
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
-             Anonymous,</span>
+             Anonymous</span>
           </div>
 
           <div class="column has-text-centered">
@@ -135,36 +135,70 @@ Our code is provided in the supplementary materials and will be made publicly av
 
 
 <!-- Video carousel -->
+<!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Video Gallery</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
+      <div class="video-grid">
+        <!-- Video Group 1 -->
+        <div class="video-group">
+          <h3 class="title is-4">Title 1</h3>
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="item item-video2">
+        <!-- Video Group 2 -->
+        <div class="video-group">
+          <h3 class="title is-4">Title 2</h3>
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
+            <source src="static/videos/" type="video/mp4">
           </video>
         </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
+        <!-- Video Group 3 -->
+        <div class="video-group">
+          <h3 class="title is-4">Title 3</h3>
+          <video poster="" id="video3" autoplay controls muted loop height="100%">
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- Video Group 4 -->
+        <div class="video-group">
+          <h3 class="title is-4">Title 4</h3>
+          <video poster="" id="video4" autoplay controls muted loop height="100%">
+            <source src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4" type="video/mp4">
           </video>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Grid layout for the video groups */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 20px; /* Space between video groups */
+  }
+
+  /* Styling for each video group */
+  .video-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-group h3 {
+    margin-bottom: 10px; /* Space between title and video */
+  }
+
+  .video-group video {
+    width: 100%; /* Make video fill the container */
+    max-width: 100%; /* Ensure video doesn't overflow */
+  }
+</style>
 <!-- End video carousel -->
 
 
