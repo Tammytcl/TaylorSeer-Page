@@ -1,48 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Academic Project Page</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <!-- 添加视频切换功能的CSS -->
-  <link rel="stylesheet" href="static/css/video-carousel.css">
-
-  <!-- 原有样式 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Research Project</title>
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <!-- 在head底部添加脚本 -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <!-- 添加视频切换功能的JS -->
-  <script src="static/js/video-carousel.js" defer></script>
-  <!-- 原有脚本 -->
-  <script src="static/js/index.js"></script>
+  <!-- 引入 MathJax 来渲染 LaTeX 公式 -->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
 </head>
 <body>
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -127,72 +107,151 @@ Our code is provided in the supplementary materials and will be made publicly av
 </section>
 <!-- End paper abstract -->
 
-
-
-
-<!-- 修改后的视频轮播部分 -->
-<section class="hero is-light is-small">
+<!-- 视频展示部分 -->
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">视频画廊</h2> <!-- 居中标题 -->
+      <h2 class="title is-3 has-text-centered">Video Gallery</h2>
 
-      <!-- 居中场景名称 -->
-      <div class="has-text-centered mb-5">
-        <span id="folder-name" class="title is-5 has-text-weight-semibold"></span>
+      <!-- 翻页控制按钮 -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-narrow">
+          <!-- 左箭头按钮 -->
+          <button class="button custom-page-btn" id="prevPage">
+            <!-- 使用文本箭头符号 ← -->
+            &#8592;
+          </button>
+        </div>
+        <div class="column is-narrow">
+          <!-- 右箭头按钮 -->
+          <button class="button custom-page-btn" id="nextPage">
+            <!-- 使用文本箭头符号 → -->
+            &#8594;
+          </button>
+        </div>
       </div>
 
-      <!-- 大视频 -->
-      <div class="large-video">
-        <h3 class="title is-4 has-text-centered">TaylorSeer</h3> <!-- 居中标题 -->
-        <video poster="" id="large-video" controls autoplay muted> <!-- 移除loop属性 -->
-          <source data-filename="TaylorSeer.mp4"
-                  src="static/videos/Video/a car stuck in traffic during rush hour/TaylorSeer.mp4"
-                  type="video/mp4">
-        </video>
-      </div>
-
-
-
-      <!-- 小视频网格 -->
-      <div class="video-grid">
-        <!-- 每个视频组添加data-filename属性 -->
-        <div class="video-group">
-          <h3 class="title is-5">22%Step</h3>
-          <video poster="" class="grid-video" controls muted>
-            <source data-filename="11steps.mp4"
-                    src="static/videos/Video/a car stuck in traffic during rush hour/11steps.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="video-group">
-          <h3 class="title is-5">FORA</h3>
-          <video poster="" class="grid-video" controls muted>
-            <source data-filename="FORA.mp4"
-                    src="static/videos/Video/a car stuck in traffic during rush hour/FORA.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="video-group">
-          <h3 class="title is-5">ToCa</h3>
-          <video poster="" class="grid-video" controls muted>
-            <source data-filename="ToCa.mp4"
-                    src="static/videos/Video/a car stuck in traffic during rush hour/ToCa.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="video-group">
-          <h3 class="title is-5">DuCa</h3>
-          <video poster="" class="grid-video" controls muted>
-            <source data-filename="DuCa.mp4"
-                    src="static/videos/Video/a car stuck in traffic during rush hour/DuCa.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+      <!-- 四宫格视频展示 -->
+      <div id="video-grid" class="columns is-multiline">
+        <!-- Videos will be dynamically inserted here by JavaScript -->
       </div>
     </div>
   </div>
 </section>
 
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>DuCa © 2024</p>
+  </div>
+</footer>
 
-  </body>
-  </html>
+<script>
+const folders = [
+  'a car stuck in traffic during rush hour',
+  'a donut and a suitcase',
+    'a horse running to join a herd of its kind',
+    'a horse taking a peaceful walk',
+    'a knife on the left of a spoon, front view',
+    'a motorcycle on the left of a bus, front view',
+    'a motorcycle turning a corner',
+    'A person is arranging flowers',
+    'A person is playing flute',
+    'A robot DJ is playing',
+    'A tranquil tableau of a dining table',
+    'A tranquil tableau of restaurant',
+    'a truck and a bicycle',
+    'An astronaut flying in space, pan right',
+    'Clown fish swimming through the coral reef',
+    'tower',
+];
+const videoPages = folders.map(folder => [
+  { title: 'TaylorSeer', src: `static/videos/Video/${folder}/TaylorSeer.mp4` },
+  { title: 'FORA', src: `static/videos/Video/${folder}/FORA.mp4` },
+  { title: 'ToCa', src: `static/videos/Video/${folder}/ToCa.mp4` },
+  { title: 'DuCa', src: `static/videos/Video/${folder}/DuCa.mp4` }
+]);
+
+
+  let currentPage = 1;
+  const totalPages = videoPages.length;
+
+  // 加载视频页面
+  function loadVideoPage(page) {
+    const videoGrid = document.getElementById('video-grid');
+    videoGrid.innerHTML = ''; // 清空现有的视频
+
+const videos = videoPages[page - 1].map(video => {
+  let videoTitle = '';
+
+  switch (video.title) {
+    case 'DuCa':
+      videoTitle = `<strong style="font-family: 'Courier New', monospace; font-weight: bold;">DuCa</strong> (Ours) x 2.5`;
+      break;
+    case '50% timesteps':
+      videoTitle = '50% timesteps x 2.0';
+      break;
+    case 'FORA':
+      videoTitle = 'FORA x 1.9';
+      break;
+    default:
+      videoTitle = video.title;
+  }
+
+  return `
+    <div class="column is-half">
+      <h3 class="subtitle has-text-centered">${videoTitle}</h3>
+      <video controls muted width="100%" autoplay>
+        <source src="${video.src}" type="video/mp4">
+      </video>
+    </div>
+  `;
+}).join('');
+
+    videoGrid.innerHTML = videos;
+
+    // 监听所有视频播放完毕的事件
+    const videoElements = Array.from(videoGrid.querySelectorAll('video'));
+    Promise.all(videoElements.map(video => {
+      return new Promise(resolve => {
+        video.onended = resolve;
+      });
+    })).then(() => {
+      // 所有视频播放完毕，自动翻页
+      if (currentPage < totalPages) {
+        currentPage++;
+      } else {
+        currentPage = 1; // 循环回到第一页
+      }
+      loadVideoPage(currentPage);
+    });
+
+    // 更新按钮的禁用状态
+    document.getElementById('prevPage').disabled = page === 1;
+    document.getElementById('nextPage').disabled = page === totalPages;
+  }
+
+  // 点击“上一页”按钮
+  document.getElementById('prevPage').addEventListener('click', function () {
+    if (currentPage > 1) {
+      currentPage--;
+      loadVideoPage(currentPage);
+    }
+  });
+
+  // 点击“下一页”按钮
+  document.getElementById('nextPage').addEventListener('click', function () {
+    if (currentPage < totalPages) {
+      currentPage++;
+      loadVideoPage(currentPage);
+    }
+  });
+
+  // 初始化加载第一页视频
+  loadVideoPage(currentPage);
+
+
+</script>
+
+</body>
+</html>
