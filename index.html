@@ -21,6 +21,97 @@
     };
   </script>
 
+  <style>
+    /* HiDream专用样式 */
+    .hidream-container {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .video-comparison-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3rem auto;
+    }
+
+    .video-item {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .video-item h3 {
+      background: linear-gradient(135deg, #4a89dc, #5d9cec);
+      color: white;
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .video-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .scene-title {
+      font-size: 1.4rem;
+      color: #363636;
+      background-color: #f5f7fa;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-align: center;
+      margin: 2rem auto;
+      width: fit-content;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+
+    .page-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .nav-button {
+      background-color: #4a89dc;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover:not(:disabled) {
+      background-color: #357abd;
+    }
+
+    .nav-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* 响应式设计 */
+    @media screen and (max-width: 768px) {
+      .video-comparison-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
 </head>
 <body>
 <section class="hero">
@@ -130,6 +221,33 @@ Our code is provided in the supplementary materials and will be made publicly av
   </div>
 </section>
 
+<!-- HiDream 视频对比部分 -->
+<section class="section">
+  <div class="hidream-container">
+    <h2 class="title is-3 has-text-centered">HiDream Video Comparison</h2>
+
+    <!-- 场景标题 -->
+    <div id="scene-name" class="scene-title">
+      Scene: Loading...
+    </div>
+
+    <!-- 导航按钮 -->
+    <div class="page-navigation">
+      <button class="nav-button" id="prevBtn" onclick="changePage(-1)">
+        &#8592; Previous
+      </button>
+      <button class="nav-button" id="nextBtn" onclick="changePage(1)">
+        Next &#8594;
+      </button>
+    </div>
+
+    <!-- 视频对比行 -->
+    <div class="video-comparison-row" id="videoRow">
+      <!-- 视频将通过JavaScript动态加载 -->
+    </div>
+  </div>
+</section>
+
 <!-- 页脚 -->
 <footer class="footer">
   <div class="content has-text-centered">
@@ -225,7 +343,7 @@ const videos = videoPages[page - 1].map(video => {
     document.getElementById('nextPage').disabled = page === totalPages;
   }
 
-  // 点击“上一页”按钮
+  // 点击"上一页"按钮
   document.getElementById('prevPage').addEventListener('click', function () {
     if (currentPage > 1) {
       currentPage--;
@@ -233,7 +351,7 @@ const videos = videoPages[page - 1].map(video => {
     }
   });
 
-  // 点击“下一页”按钮
+  // 点击"下一页"按钮
   document.getElementById('nextPage').addEventListener('click', function () {
     if (currentPage < totalPages) {
       currentPage++;
@@ -244,7 +362,72 @@ const videos = videoPages[page - 1].map(video => {
   // 初始化加载第一页视频
   loadVideoPage(currentPage);
 
+  // HiDream视频对比功能
+  const scenes = [
+    { name: 'Aerial coastal view', id: 1 },
+    { name: 'Autumn leaves falling', id: 2 },
+    { name: 'Close-up flower blooming', id: 3 },
+    { name: 'Cozy reading nook', id: 4 },
+    { name: 'Jellyfish', id: 5 },
+    { name: 'Modern kitchen', id: 6 },
+    { name: 'Ocean waves', id: 7 },
+    { name: 'Space Shuttle', id: 8 },
+    { name: 'Waterfall', id: 9 }
+  ];
 
+  let currentSceneIndex = 0;
+
+  // 更新页面内容
+  function updatePage() {
+    const scene = scenes[currentSceneIndex];
+
+    // 更新场景标题
+    document.getElementById('scene-name').textContent = `Scene: ${scene.name}`;
+
+    // 生成视频HTML - 使用sample{id}_{type}.mp4格式
+    const videoRow = document.getElementById('videoRow');
+    videoRow.innerHTML = `
+      <div class="video-item">
+        <h3>Original</h3>
+        <video controls autoplay muted loop>
+          <source src="static/videos/HiDream/sample${scene.id}_original.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="video-item">
+        <h3>TeaCache x 2.00</h3>
+        <video controls autoplay muted loop>
+          <source src="static/videos/HiDream/sample${scene.id}_teacache.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="video-item">
+        <h3>TaylorSeer x 2.00</h3>
+        <video controls autoplay muted loop>
+          <source src="static/videos/HiDream/sample${scene.id}_taylorseer.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    `;
+
+    // 更新按钮状态
+    document.getElementById('prevBtn').disabled = currentSceneIndex === 0;
+    document.getElementById('nextBtn').disabled = currentSceneIndex === scenes.length - 1;
+  }
+
+  // 切换页面
+  window.changePage = function(direction) {
+    const newIndex = currentSceneIndex + direction;
+    if (newIndex >= 0 && newIndex < scenes.length) {
+      currentSceneIndex = newIndex;
+      updatePage();
+    }
+  }
+
+  // 初始化HiDream页面
+  updatePage();
 </script>
 
 </body>
