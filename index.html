@@ -364,15 +364,10 @@ const videos = videoPages[page - 1].map(video => {
 
   // HiDream视频对比功能
   const scenes = [
-    { name: 'Aerial coastal view', id: 1 },
-    { name: 'Autumn leaves falling', id: 2 },
-    { name: 'Close-up flower blooming', id: 3 },
-    { name: 'Cozy reading nook', id: 4 },
-    { name: 'Jellyfish', id: 5 },
-    { name: 'Modern kitchen', id: 6 },
-    { name: 'Ocean waves', id: 7 },
-    { name: 'Space Shuttle', id: 8 },
-    { name: 'Waterfall', id: 9 }
+    { name: 'sample1', id: 1 },
+    { name: 'sample2', id: 2 },
+    { name: 'sample3', id: 3 },
+    { name: 'sample4', id: 4 },
   ];
 
   let currentSceneIndex = 0;
@@ -390,7 +385,7 @@ const videos = videoPages[page - 1].map(video => {
       <div class="video-item">
         <h3>Original</h3>
         <video controls autoplay muted loop>
-          <source src="static/videos/HiDream/sample${scene.id}_original.mp4" type="video/mp4">
+          <source src="static/videos/FramePack/sample${scene.id}_original.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -398,7 +393,7 @@ const videos = videoPages[page - 1].map(video => {
       <div class="video-item">
         <h3>TeaCache x 2.00</h3>
         <video controls autoplay muted loop>
-          <source src="static/videos/HiDream/sample${scene.id}_teacache.mp4" type="video/mp4">
+          <source src="static/videos/FramePack/sample${scene.id}_teacache.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -406,7 +401,7 @@ const videos = videoPages[page - 1].map(video => {
       <div class="video-item">
         <h3>TaylorSeer x 2.00</h3>
         <video controls autoplay muted loop>
-          <source src="static/videos/HiDream/sample${scene.id}_taylorseer.mp4" type="video/mp4">
+          <source src="static/videos/FramePack/sample${scene.id}_taylorseer.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
