@@ -488,18 +488,7 @@ const videos = videoPages[page - 1].map(video => {
         </div>
       </div>
 
-      <!-- Key findings section -->
-      <div class="box content mt-5">
-        <h4 class="has-text-centered">Key Findings</h4>
-        <p>The comparison reveals the exceptional performance of TaylorSeer compared to other acceleration techniques:</p>
-        <ul>
-          <li><strong>Superior Image Quality:</strong> TaylorSeer achieves an ImageReward score of 1.083, significantly closer to the full model (1.128) than TeaCache (0.984)</li>
-          <li><strong>Impressive Acceleration:</strong> TaylorSeer provides a 4.0× speedup while preserving generation quality</li>
-          <li><strong>Improved Metrics:</strong> Better PSNR (28.248), SSIM (0.6084), and LPIPS (0.532) scores indicate higher fidelity generations</li>
-          <li><strong>Efficiency:</strong> TaylorSeer achieves these results with no additional training, making it immediately applicable to existing diffusion models</li>
-        </ul>
-        <p>TaylorSeer's feature forecasting approach provides a compelling advantage over traditional feature caching methods, especially at higher acceleration ratios where quality degradation typically occurs.</p>
-      </div>
+
     </div>
   </div>
 </section>
@@ -515,7 +504,7 @@ const videos = videoPages[page - 1].map(video => {
 
     var option = {
       legend: {
-        data: ['HiDream-Full', 'TeaCache(1)', 'TaylorSeer(N=4,O=2)']
+        data: ['HiDream-Full', 'TeaCache(l1=1)', 'TaylorSeer(N=4,O=2)']
       },
       radar: {
         indicator: [
@@ -537,8 +526,10 @@ const videos = videoPages[page - 1].map(video => {
             },
             {
               value: [3.8, 0.9849, 28.139, 0.6036, 0.565],
-              name: 'TeaCache(1)',
-              areaStyle: { opacity: 0.1 }
+              name: 'TeaCache(l1=1)',
+              lineStyle: { width: 2, color: '#ffd700' },
+              areaStyle: { opacity: 0.1, color: 'rgba(255, 215, 0, 0.2)' },
+              itemStyle: { color: '#ffd700' }
             },
             {
               value: [4.0, 1.083275183, 28.248, 0.6084, 0.532],
@@ -547,7 +538,8 @@ const videos = videoPages[page - 1].map(video => {
               areaStyle: { opacity: 0.2, color: 'rgba(72, 199, 116, 0.2)' },
               emphasis: {
                 lineStyle: { width: 4 }
-              }
+              },
+              itemStyle: { color: '#48c774' }
             }
           ]
         }
