@@ -421,7 +421,7 @@ const videos = videoPages[page - 1].map(video => {
 <!-- Model Comparison Section -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Model Performance Comparison</h2>
+    <h2 class="title is-3 has-text-centered">HiDream Model Performance Comparison</h2>
 
     <div class="content">
       <p class="has-text-centered">Comparison of TaylorSeer with other acceleration methods</p>
@@ -451,7 +451,7 @@ const videos = videoPages[page - 1].map(video => {
               <td>-</td>
             </tr>
             <tr>
-              <td>TeaCache(1)</td>
+              <td>TeaCache($l1=1$)</td>
               <td>2047.37</td>
               <td>3.8$\times$</td>
               <td>0.9849</td>
@@ -460,7 +460,7 @@ const videos = videoPages[page - 1].map(video => {
               <td>0.565</td>
             </tr>
             <tr class="has-background-success-light">
-              <td><strong>TaylorSeer(N=4,O=2)</strong></td>
+              <td><strong>TaylorSeer($N=4,O=2$)</strong></td>
               <td><strong>1945.00</strong></td>
               <td><strong>4.0$\times$</strong></td>
               <td><strong>1.083275183</strong></td>
@@ -475,7 +475,7 @@ const videos = videoPages[page - 1].map(video => {
       <!-- Chart visualization -->
       <div class="columns is-centered mt-5">
         <div class="column is-8">
-          <h3 class="subtitle has-text-centered">Radar Chart Comparison</h3>
+          <h3 class="subtitle has-text-centered">Radar Chart Comparison(Scaled)</h3>
           <div class="box">
             <div id="radarChart" style="height: 400px;"></div>
           </div>
@@ -496,7 +496,7 @@ const videos = videoPages[page - 1].map(video => {
 
     var option = {
       legend: {
-        data: ['HiDream-Full', 'TeaCache(l1=1)', 'TaylorSeer(N=4,O=2)']
+        data: ['HiDream-Full', 'TeaCache($l_1=1$)', 'TaylorSeer($N=4,O=2$)']
       },
       radar: {
         indicator: [
@@ -518,14 +518,14 @@ const videos = videoPages[page - 1].map(video => {
             },
             {
               value: [3.8, 0.9849, 28.139, 0.6036, 0.565],
-              name: 'TeaCache(l1=1)',
+              name: 'TeaCache($l1=1$)',
               lineStyle: { width: 2, color: '#ffd700' },
               areaStyle: { opacity: 0.1, color: 'rgba(255, 215, 0, 0.2)' },
               itemStyle: { color: '#ffd700' }
             },
             {
               value: [4.0, 1.083275183, 28.248, 0.6084, 0.532],
-              name: 'TaylorSeer(N=4,O=2)',
+              name: 'TaylorSeer($N=4,O=2$)',
               lineStyle: { width: 3, color: '#48c774' },
               areaStyle: { opacity: 0.2, color: 'rgba(72, 199, 116, 0.2)' },
               emphasis: {
@@ -548,7 +548,214 @@ const videos = videoPages[page - 1].map(video => {
 </script>
 
 
+<!-- 需要添加的照片墙部分 -->
+      <!-- Visual Comparison Gallery -->
+      <h3 class="subtitle has-text-centered mt-5">Visual Quality Comparison</h3>
+      <div class="image-gallery">
+        <!-- Row 1: Scenic Landscapes -->
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/Original/Original_1.jpg" alt="HiDream-Full Landscape">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TeaCache/Teacache_1.png" alt="TeaCache Landscape">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_1.jpg" alt="TaylorSeer Landscape">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Row 2: Portrait Images -->
+        <div class="columns is-centered mt-4">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/Original/Original_2.jpg" alt="HiDream-Full Portrait">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TeaCache/Teacache_2.png" alt="TeaCache Portrait">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_2.jpg" alt="TaylorSeer Portrait">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3: Object Images -->
+        <div class="columns is-centered mt-4">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/Original/Original_3.jpg" alt="HiDream-Full Object">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TeaCache/Teacache_3.png" alt="TeaCache Object">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_3.jpg" alt="TaylorSeer Object">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 4: Portrait Images -->
+        <div class="columns is-centered mt-4">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/Original/Original_4.jpg" alt="HiDream-Full Portrait">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TeaCache/Teacache_4.png" alt="TeaCache Portrait">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_4.jpg" alt="TaylorSeer Portrait">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+<style>
+  .image-gallery .card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .image-gallery .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .image-gallery .image {
+    overflow: hidden;
+  }
+
+  .image-gallery img {
+    transition: transform 0.5s ease;
+  }
+
+  .image-gallery .card:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-gallery .has-background-success-light {
+    box-shadow: 0 0 0 2px #48c774;
+  }
+</style>
 
 <!-- 页脚 -->
 <footer class="footer">
