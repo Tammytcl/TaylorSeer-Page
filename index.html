@@ -548,17 +548,21 @@ const videos = videoPages[page - 1].map(video => {
 </script>
 
 
-<!-- 需要添加的照片墙部分 -->
-      <!-- Visual Comparison Gallery -->
-      <h3 class="subtitle has-text-centered mt-5">Visual Quality Comparison</h3>
-      <div class="image-gallery">
-        <!-- Row 1: Scenic Landscapes -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="subtitle has-text-centered mt-5">Visual Quality Comparison</h3>
+    <p class="has-text-centered mb-4">Comparison of generation results across different methods</p>
+
+    <div class="image-gallery">
+      <!-- Row 1 -->
+      <div class="comparison-group mb-6">
+        <h4 class="is-size-5 has-text-centered mb-3">Sample 1</h4>
         <div class="columns is-centered">
           <div class="column">
             <div class="card">
               <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/Original/Original_1.jpg" alt="HiDream-Full Landscape">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/Original/Original_1.jpg" alt="HiDream-Full Sample 1">
                 </figure>
               </div>
               <div class="card-content has-text-centered">
@@ -570,8 +574,8 @@ const videos = videoPages[page - 1].map(video => {
           <div class="column">
             <div class="card">
               <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TeaCache/Teacache_1.png" alt="TeaCache Landscape">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TeaCache/Teacache_1.png" alt="TeaCache Sample 1">
                 </figure>
               </div>
               <div class="card-content has-text-centered">
@@ -583,8 +587,8 @@ const videos = videoPages[page - 1].map(video => {
           <div class="column">
             <div class="card has-background-success-light">
               <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_1.jpg" alt="TaylorSeer Landscape">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_1.jpg" alt="TaylorSeer Sample 1">
                 </figure>
               </div>
               <div class="card-content has-text-centered">
@@ -594,140 +598,151 @@ const videos = videoPages[page - 1].map(video => {
             </div>
           </div>
         </div>
-
-        <!-- Row 2: Portrait Images -->
-        <div class="columns is-centered mt-4">
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/Original/Original_2.jpg" alt="HiDream-Full Portrait">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">HiDream-Full</p>
-                <p class="subtitle is-6">1.0$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TeaCache/Teacache_2.png" alt="TeaCache Portrait">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">TeaCache($l_1=1$)</p>
-                <p class="subtitle is-6">3.8$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card has-background-success-light">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_2.jpg" alt="TaylorSeer Portrait">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
-                <p class="subtitle is-6">4.0$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 3: Object Images -->
-        <div class="columns is-centered mt-4">
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/Original/Original_3.jpg" alt="HiDream-Full Object">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">HiDream-Full</p>
-                <p class="subtitle is-6">1.0$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TeaCache/Teacache_3.png" alt="TeaCache Object">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">TeaCache($l_1=1$)</p>
-                <p class="subtitle is-6">3.8$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card has-background-success-light">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_3.jpg" alt="TaylorSeer Object">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
-                <p class="subtitle is-6">4.0$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 4: Portrait Images -->
-        <div class="columns is-centered mt-4">
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/Original/Original_4.jpg" alt="HiDream-Full Portrait">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">HiDream-Full</p>
-                <p class="subtitle is-6">1.0$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TeaCache/Teacache_4.png" alt="TeaCache Portrait">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">TeaCache($l_1=1$)</p>
-                <p class="subtitle is-6">3.8$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-          <div class="column">
-            <div class="card has-background-success-light">
-              <div class="card-image">
-                <figure class="image is-16by9">
-                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_4.jpg" alt="TaylorSeer Portrait">
-                </figure>
-              </div>
-              <div class="card-content has-text-centered">
-                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
-                <p class="subtitle is-6">4.0$\times$ speed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
       </div>
 
+      <!-- Row 2 -->
+      <div class="comparison-group mb-6">
+        <h4 class="is-size-5 has-text-centered mb-3">Sample 2</h4>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/Original/Original_2.jpg" alt="HiDream-Full Sample 2">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TeaCache/Teacache_2.png" alt="TeaCache Sample 2">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_2.jpg" alt="TaylorSeer Sample 2">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="comparison-group mb-6">
+        <h4 class="is-size-5 has-text-centered mb-3">Sample 3</h4>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/Original/Original_3.jpg" alt="HiDream-Full Sample 3">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TeaCache/Teacache_3.png" alt="TeaCache Sample 3">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_3.jpg" alt="TaylorSeer Sample 3">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="comparison-group">
+        <h4 class="is-size-5 has-text-centered mb-3">Sample 4</h4>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/Original/Original_4.jpg" alt="HiDream-Full Sample 4">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">HiDream-Full</p>
+                <p class="subtitle is-6">1.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TeaCache/Teacache_4.png" alt="TeaCache Sample 4">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TeaCache($l_1=1$)</p>
+                <p class="subtitle is-6">3.8$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card has-background-success-light">
+              <div class="card-image">
+                <figure class="image is-square">
+                  <img src="static/images/HiDream/TaylorSeer/TaylorSeer_4.jpg" alt="TaylorSeer Sample 4">
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title is-5">TaylorSeer($N=4,O=2$)</p>
+                <p class="subtitle is-6">4.0$\times$ speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <style>
+  /* 照片墙样式优化 */
   .image-gallery .card {
     height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -746,6 +761,7 @@ const videos = videoPages[page - 1].map(video => {
 
   .image-gallery img {
     transition: transform 0.5s ease;
+    object-fit: cover; /* 确保图片填充整个区域 */
   }
 
   .image-gallery .card:hover img {
@@ -754,6 +770,43 @@ const videos = videoPages[page - 1].map(video => {
 
   .image-gallery .has-background-success-light {
     box-shadow: 0 0 0 2px #48c774;
+  }
+
+  .comparison-group {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  }
+
+  .comparison-group h4 {
+    position: relative;
+  }
+
+  .comparison-group h4:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #48c774, transparent);
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+
+  /* 响应式布局优化 */
+  @media screen and (max-width: 768px) {
+    .image-gallery .columns {
+      margin-top: 0 !important;
+    }
+
+    .image-gallery .column {
+      padding: 0.5rem;
+    }
+
+    .comparison-group {
+      padding: 1rem;
+      margin-bottom: 1.5rem !important;
+    }
   }
 </style>
 
