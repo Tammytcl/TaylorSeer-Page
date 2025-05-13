@@ -425,5 +425,153 @@ const videos = videoPages[page - 1].map(video => {
   updatePage();
 </script>
 
+<!-- HiDream模型对比部分 -->
+<section class="section">
+  <div class="hidream-container">
+    <h2 class="title is-3 has-text-centered">HiDream模型对比</h2>
+
+    <div class="content">
+      <p class="has-text-centered">以下是HiDream模型与其他模型的性能对比</p>
+
+      <!-- 性能对比表格 -->
+      <div class="table-container">
+        <table class="table is-striped is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>FLOPs</th>
+              <th>速度(倍率)</th>
+              <th>ImageReward</th>
+              <th>PSNR</th>
+              <th>SSIM</th>
+              <th>LPIPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>原始模型</td>
+              <td>7780.00</td>
+              <td>1.0</td>
+              <td>1.128518935</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+
+            <tr>
+              <td>TeaCache(1)</td>
+              <td>2047.37</td>
+              <td>3.8</td>
+              <td>0.9849</td>
+              <td>28.139</td>
+              <td>0.6036</td>
+              <td>0.565</td>
+            </tr>
+            <tr>
+              <td>TaylorSeer(N=4,O=2)</td>
+              <td>1945.00</td>
+              <td>4.0</td>
+              <td>1.083275183</td>
+              <td>28.248</td>
+              <td>0.6084</td>
+              <td>0.532</td>
+            </tr>
+            <tr class="is-selected">
+              <td>HiDream</td>
+              <td>1720.50</td>
+              <td>4.5</td>
+              <td>1.095641207</td>
+              <td>28.352</td>
+              <td>0.6128</td>
+              <td>0.525</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 可视化图表部分 -->
+      <div class="columns is-centered mt-6">
+        <div class="column is-10">
+          <h3 class="subtitle has-text-centered">各模型性能雷达图对比</h3>
+          <div class="box">
+            <div id="radarChart" style="height: 400px;"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ECharts引入 -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
+<!-- 雷达图脚本 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var chartDom = document.getElementById('radarChart');
+    var myChart = echarts.init(chartDom);
+
+    var option = {
+      legend: {
+        data: ['原始模型', 'TeaCache(1)', 'TaylorSeer(N=4,O=2)', 'HiDream']
+      },
+      radar: {
+        indicator: [
+          { name: '速度', max: 5.5 },
+          { name: 'ImageReward', max: 1.2 },
+          { name: 'PSNR', max: 29 },
+          { name: 'SSIM', max: 0.7 },
+          { name: 'LPIPS(越低越好)', max: 0.6, inverse: true }
+        ]
+      },
+      series: [
+        {
+          type: 'radar',
+          data: [
+            {
+              value: [1.0, 1.128518935, 28, 0.58, 0.57],
+              name: '原始模型',
+              areaStyle: { opacity: 0.1 }
+            },
+
+            {
+              value: [3.8, 0.9849, 28.139, 0.6036, 0.565],
+              name: 'TeaCache(1)',
+              areaStyle: { opacity: 0.1 }
+            },
+            {
+              value: [4.0, 1.083275183, 28.248, 0.6084, 0.532],
+              name: 'TaylorSeer(N=4,O=2)',
+              areaStyle: { opacity: 0.1 }
+            },
+            {
+              value: [4.5, 1.095641207, 28.352, 0.6128, 0.525],
+              name: 'HiDream',
+              lineStyle: { width: 3 },
+              areaStyle: { opacity: 0.2 },
+              emphasis: {
+                lineStyle: { width: 4 }
+              }
+            }
+          ]
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+
+    // 响应式调整
+    window.addEventListener('resize', function() {
+      myChart.resize();
+    });
+  });
+</script>
+
+
+
+
 </body>
 </html>
