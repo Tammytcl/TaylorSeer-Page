@@ -868,6 +868,8 @@ const videos = videoPages[page - 1].map(video => {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     border-radius: 10px;
+    min-height: 400px;
+
   }
 
   .image-gallery .card:hover {
@@ -878,6 +880,8 @@ const videos = videoPages[page - 1].map(video => {
   .image-gallery .image {
     overflow: hidden;
     cursor: pointer;
+    height: 320px;
+
   }
 
   .image-gallery img {
@@ -916,6 +920,11 @@ const videos = videoPages[page - 1].map(video => {
   }
 
   /* 模态框样式 */
+  .columns.is-variable.is-4 {
+    --columnGap: 2rem;
+  }
+
+  /* 模态框样式 */
   .modal-content {
     width: auto;
     max-width: 95%;
@@ -928,6 +937,9 @@ const videos = videoPages[page - 1].map(video => {
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
+  }
+  .image-gallery .card-content {
+    padding: 1.5rem;
   }
 
   .modal-content img {
@@ -1027,8 +1039,7 @@ const videos = videoPages[page - 1].map(video => {
 
                 <h4 class="title is-4">Analysis</h4>
                 <p>
-                  Our experiments with TaylorSeer on super-resolution tasks demonstrate impressive results. We achieved a computational acceleration of 3× in terms of FLOPs while maintaining virtually lossless quality in PSNR metrics compared to the full Inf-DiT model.
-                </p>
+  Our experiments with TaylorSeer on super-resolution tasks demonstrate impressive results. We achieved a computational acceleration of 3× in terms of FLOPs while maintaining virtually lossless quality in PSNR metrics compared to the full Inf-DiT model. Additionally, we observe that lower-order methods perform better when the interval is large, while higher-order methods achieve better results when the interval is small.                </p>
 
               </div>
             </div>
