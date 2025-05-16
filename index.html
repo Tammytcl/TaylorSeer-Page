@@ -1031,9 +1031,11 @@ const videos = videoPages[page - 1].map(video => {
               <div class="content">
                 <h4 class="title is-4">Experimental Configuration</h4>
                 <ul>
-                  <li><strong>Base Model:</strong>  Inf-DiT  with standard configuration</li>
-                  <li><strong>Dataset:</strong> DIV8K, 100 test images</li>
-                  <li><strong>Resolution:</strong> 4× upscaling (512→2048)</li>
+                    <li><strong>Base Model:</strong>  Inf-DiT  with standard configuration</li>
+                    <li><strong>Dataset:</strong> DIV8K, 100 test images</li>
+                    <li><strong>Resolution:</strong> 4× upscaling (512→2048)</li>
+                    <li><strong>Sampler:</strong> ConcatDDIMSampler</li>
+                    <li><strong>Sampling Steps:</strong> 40 steps</li>
 
                 </ul>
 
