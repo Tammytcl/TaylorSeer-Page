@@ -1000,6 +1000,99 @@ const videos = videoPages[page - 1].map(video => {
   });
 </script>
 
+<section class="section">
+  <div class="container">
+    <h3 class="title is-3 has-text-centered">Super-Resolution Experimental Results</h3>
+    <p class="has-text-centered mb-4">TaylorSeer application to super-resolution tasks</p>
+
+    <div class="sr-experiment">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <!-- 超分辨率实验图片 -->
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                <img src="static/images/SR.jpg" alt="Super-Resolution Comparison">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4 class="title is-4">Experimental Configuration</h4>
+                <ul>
+                  <li><strong>Base Model:</strong>  Inf-DiT  with standard configuration</li>
+                  <li><strong>Dataset:</strong> DIV8K, 100 test images</li>
+                  <li><strong>Resolution:</strong> 4× upscaling (512→2048)</li>
+
+                </ul>
+
+                <h4 class="title is-4">Analysis</h4>
+                <p>
+                  Our experiments demonstrate that TaylorSeer maintains exceptional quality while significantly accelerating super-resolution tasks. Quantitative metrics show only minimal degradation compared to the full model (PSNR: -0.12dB, SSIM: -0.002), while achieving 3.5× speedup.
+                </p>
+                <p>
+                  Notably, TaylorSeer preserves fine details and textures better than other acceleration methods, particularly in complex regions with high-frequency details. The results suggest that TaylorSeer's approximation strategy is particularly effective for image restoration tasks where maintaining spatial details is critical.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sr-experiment {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  }
+
+  .sr-experiment .card {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .sr-experiment .image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .sr-experiment .image:hover {
+    transform: scale(1.02);
+  }
+
+  .sr-experiment .content ul {
+    margin-left: 1.5em;
+  }
+
+  .sr-experiment .content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #363636;
+  }
+</style>
+
+<script>
+  // 为超分辨率图片添加点击查看大图功能
+  document.addEventListener('DOMContentLoaded', function() {
+    const srImage = document.querySelector('.sr-experiment .card-image img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+
+    if(srImage && modal && modalImg) {
+      srImage.addEventListener('click', function() {
+        modalImg.src = this.src;
+        modal.classList.add('is-active');
+      });
+    }
+  });
+</script>
+
+
+
+
 <!-- 页脚 -->
 <footer class="footer">
   <div class="content has-text-centered">
