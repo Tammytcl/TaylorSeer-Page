@@ -863,26 +863,28 @@ const videos = videoPages[page - 1].map(video => {
 
 <style>
   /* 照片墙样式优化 */
-  .image-gallery .card {
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    border-radius: 10px;
-    min-height: 400px;
+.image-gallery .image {
+  overflow: hidden;
+  cursor: pointer;
+  /* 将这个高度从 320px 改为更大的值，比如 380px 或 400px */
+  height: 380px;  /* 原来是 320px */
+}
 
-  }
+.image-gallery .card {
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border-radius: 10px;
+  /* 相应地增加卡片最小高度 */
+  min-height: 460px;  /* 原来是 400px */
+}
 
   .image-gallery .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   }
 
-  .image-gallery .image {
-    overflow: hidden;
-    cursor: pointer;
-    height: 320px;
 
-  }
 
   .image-gallery img {
     transition: transform 0.5s ease;
@@ -960,20 +962,25 @@ const videos = videoPages[page - 1].map(video => {
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .comparison-group {
-      padding: 1rem;
-      margin-bottom: 1.5rem !important;
-    }
-
-    .column.is-4 {
-      width: 100% !important;
-    }
-
-    .columns.is-variable.is-4 {
-      --columnGap: 0.5rem;
-    }
+  @media screen and (max-width: 1023px) {
+  .image-gallery .image {
+    height: 320px;  /* 原来是 280px */
   }
+
+  .image-gallery .card {
+    min-height: 400px;  /* 原来是 350px */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-gallery .image {
+    height: 280px;  /* 原来是 240px */
+  }
+
+  .image-gallery .card {
+    min-height: 360px;  /* 原来是 300px */
+  }
+}
 </style>
 
 <script>
