@@ -193,7 +193,7 @@ Our code is provided in the supplementary materials and will be made publicly av
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Video Gallery</h2>
+      <h2 class="title is-3 has-text-centered">HunyuanVideo Gallery(480p</h2>
 
       <!-- 翻页控制按钮 -->
       <div class="columns is-centered has-text-centered">
@@ -866,8 +866,8 @@ const videos = videoPages[page - 1].map(video => {
 .image-gallery .image {
   overflow: hidden;
   cursor: pointer;
-  /* 将这个高度从 320px 改为更大的值，比如 380px 或 400px */
-  height: 380px;  /* 原来是 320px */
+  /* 进一步增大图片高度 */
+  height: 450px;  /* 从 380px 增加到 450px */
 }
 
 .image-gallery .card {
@@ -875,8 +875,8 @@ const videos = videoPages[page - 1].map(video => {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   border-radius: 10px;
-  /* 相应地增加卡片最小高度 */
-  min-height: 460px;  /* 原来是 400px */
+  /* 相应增加卡片最小高度 */
+  min-height: 530px;  /* 从 460px 增加到 530px */
 }
 
   .image-gallery .card:hover {
@@ -884,11 +884,11 @@ const videos = videoPages[page - 1].map(video => {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
   }
 
-
-
   .image-gallery img {
     transition: transform 0.5s ease;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
   .image-gallery .card:hover img {
@@ -921,7 +921,7 @@ const videos = videoPages[page - 1].map(video => {
     border-radius: 2px;
   }
 
-  /* 模态框样式 */
+  /* 列间距样式 */
   .columns.is-variable.is-4 {
     --columnGap: 2rem;
   }
@@ -940,6 +940,7 @@ const videos = videoPages[page - 1].map(video => {
     border-radius: 8px;
     overflow: hidden;
   }
+
   .image-gallery .card-content {
     padding: 1.5rem;
   }
@@ -960,27 +961,38 @@ const videos = videoPages[page - 1].map(video => {
     .column.is-4 {
       width: 50% !important;
     }
+
+    .image-gallery .image {
+      height: 380px;  /* 中等屏幕尺寸 */
+    }
+
+    .image-gallery .card {
+      min-height: 460px;
+    }
   }
 
-  @media screen and (max-width: 1023px) {
-  .image-gallery .image {
-    height: 320px;  /* 原来是 280px */
-  }
+  @media screen and (max-width: 768px) {
+    .comparison-group {
+      padding: 1rem;
+      margin-bottom: 1.5rem !important;
+    }
 
-  .image-gallery .card {
-    min-height: 400px;  /* 原来是 350px */
-  }
-}
+    .column.is-4 {
+      width: 100% !important;
+    }
 
-@media screen and (max-width: 768px) {
-  .image-gallery .image {
-    height: 280px;  /* 原来是 240px */
-  }
+    .columns.is-variable.is-4 {
+      --columnGap: 0.5rem;
+    }
 
-  .image-gallery .card {
-    min-height: 360px;  /* 原来是 300px */
+    .image-gallery .image {
+      height: 320px;  /* 小屏幕尺寸 */
+    }
+
+    .image-gallery .card {
+      min-height: 400px;
+    }
   }
-}
 </style>
 
 <script>
