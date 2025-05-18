@@ -1055,13 +1055,27 @@ const videos = videoPages[page - 1].map(video => {
                     <li><strong>Resolution:</strong> 4× upscaling (512→2048)</li>
                     <li><strong>Sampler:</strong> ConcatDDIMSampler</li>
                     <li><strong>Sampling Steps:</strong> 40 steps</li>
-
                 </ul>
 
                 <h4 class="title is-5">Analysis</h4>
                 <p>
-  Our experiments with TaylorSeer on super-resolution tasks demonstrate impressive results. We achieved a computational acceleration of 3× in terms of FLOPs while maintaining virtually lossless quality in PSNR metrics compared to the full Inf-DiT model. Additionally, we observe that lower-order methods perform better when the interval is large, while higher-order methods achieve better results when the interval is small.                </p>
+                  Our experiments with TaylorSeer on super-resolution tasks demonstrate impressive results. We achieved a computational acceleration of 3× in terms of FLOPs while maintaining virtually lossless quality in PSNR metrics compared to the full Inf-DiT model. Additionally, we observe that lower-order methods perform better when the interval is large, while higher-order methods achieve better results when the interval is small.
+                </p>
 
+                <!-- 效果对比图 -->
+                <h4 class="title is-5 mt-5">Visual Comparison</h4>
+                <div class="columns is-centered">
+                  <div class="column">
+                    <div class="comparison-card">
+                      <div class="image-container">
+                        <img src="static/images/SR_Comparision.jpg" alt="TaylorSeer vs Baseline Methods" class="comparison-image">
+                      </div>
+                      <div class="comparison-caption mt-3">
+                        <p>4$\times$ super-resolution results from 128×128 to 512×512 pixels</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1102,24 +1116,66 @@ const videos = videoPages[page - 1].map(video => {
     margin-bottom: 0.75rem;
     color: #363636;
   }
+
+  /* 效果对比图样式 */
+  .comparison-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  .image-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .comparison-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .comparison-caption {
+    padding: 0 1rem 1rem;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+  }
 </style>
 
 <script>
   // 为超分辨率图片添加点击查看大图功能
   document.addEventListener('DOMContentLoaded', function() {
-    const srImage = document.querySelector('.sr-experiment .card-image img');
+    const srImages = document.querySelectorAll('.sr-experiment .card-image img, .comparison-image');
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
 
-    if(srImage && modal && modalImg) {
-      srImage.addEventListener('click', function() {
-        modalImg.src = this.src;
-        modal.classList.add('is-active');
+    if(modal && modalImg) {
+      srImages.forEach(img => {
+        img.addEventListener('click', function() {
+          modalImg.src = this.src;
+          modal.classList.add('is-active');
+        });
       });
+
+      // 关闭模态框
+      const closeModal = document.querySelector('.modal-close');
+      const modalBg = document.querySelector('.modal-background');
+
+      if(closeModal && modalBg) {
+        closeModal.addEventListener('click', function() {
+          modal.classList.remove('is-active');
+        });
+
+        modalBg.addEventListener('click', function() {
+          modal.classList.remove('is-active');
+        });
+      }
     }
   });
 </script>
-
 
 
 
