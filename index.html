@@ -1177,25 +1177,55 @@ const videos = videoPages[page - 1].map(video => {
   });
 </script>
 
-const sceneId = 'WAN2.1';
-const videoRow = document.getElementById('videoRow');
-videoRow.innerHTML = `
-  <div class="video-item">
-    <h3>TeaCache</h3>
-    <video controls autoplay muted loop>
-      <source src="static/videos/WAN/TeaCache.mp4" type="video/mp4">
 
-    </video>
-  </div>
+<style>
+  #videoRow {
+    display: flex;
+    gap: 20px; /* 可根据需要调整间距 */
+    justify-content: center; /* 居中排列，可根据需要更换为 space-between */
+    flex-wrap: wrap; /* 如果窗口太窄自动换行 */
+  }
 
-  <div class="video-item">
-    <h3>TaylorSeer</h3>
-    <video controls autoplay muted loop>
-      <source src="static/videos/WAN/TaylorSeer.mp4" type="video/mp4">
+  .video-item {
+    flex: 1 1 45%; /* 每个视频项占45%，可根据需要调整 */
+    max-width: 600px;
+  }
 
-    </video>
-  </div>
-`;
+  .video-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .video-item h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+</style>
+
+
+<script>
+  const sceneId = 'WAN2.1';
+  const videoRow = document.getElementById('videoRow');
+  videoRow.innerHTML = `
+    <div class="video-item">
+      <h3>TeaCache</h3>
+      <video controls autoplay muted loop>
+        <source src="static/videos/WAN/TeaCache.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="video-item">
+      <h3>TaylorSeer</h3>
+      <video controls autoplay muted loop>
+        <source src="static/videos/WAN/TaylorSeer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  `;
+</script>
+
 
 <!-- 页脚 -->
 <footer class="footer">
