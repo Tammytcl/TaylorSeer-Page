@@ -1177,7 +1177,25 @@ const videos = videoPages[page - 1].map(video => {
   });
 </script>
 
+const sceneId = 'WAN2.1';
+const videoRow = document.getElementById('videoRow');
+videoRow.innerHTML = `
+  <div class="video-item">
+    <h3>TeaCache</h3>
+    <video controls autoplay muted loop>
+      <source src="static/videos/WAN/TeaCache.mp4" type="video/mp4">
 
+    </video>
+  </div>
+
+  <div class="video-item">
+    <h3>TaylorSeer</h3>
+    <video controls autoplay muted loop>
+      <source src="static/videos/WAN/TaylorSeer.mp4" type="video/mp4">
+
+    </video>
+  </div>
+`;
 
 <!-- 页脚 -->
 <footer class="footer">
