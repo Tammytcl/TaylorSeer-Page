@@ -26,17 +26,20 @@
     .authors-container {
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 1.5rem;
       margin: 1rem 0;
+      align-items: center;
     }
 
     .author-row {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      text-align: center;
       padding: 0.5rem 0;
       border-bottom: 1px solid #f0f0f0;
+      width: 100%;
+      max-width: 600px;
     }
 
     .author-row:last-child {
@@ -46,14 +49,14 @@
     .author-name {
       font-weight: 600;
       color: #363636;
-      min-width: 200px;
-      flex-shrink: 0;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
     }
 
     .author-affiliation {
       color: #666;
       font-size: 0.9rem;
-      margin-left: 0.5rem;
+      line-height: 1.4;
     }
 
     .author-notes {
@@ -70,17 +73,16 @@
     /* 响应式设计 */
     @media screen and (max-width: 768px) {
       .author-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
+        max-width: 100%;
+        padding: 0.3rem 1rem;
       }
 
       .author-name {
-        min-width: auto;
+        font-size: 1rem;
       }
 
       .author-affiliation {
-        margin-left: 0;
+        font-size: 0.85rem;
       }
     }
 
