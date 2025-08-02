@@ -25,10 +25,12 @@
     /* 作者列表样式 */
     .authors-container {
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
       margin: 1rem 0;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .author-row {
@@ -37,13 +39,8 @@
       align-items: center;
       text-align: center;
       padding: 0.5rem 0;
-      border-bottom: 1px solid #f0f0f0;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .author-row:last-child {
-      border-bottom: none;
+      width: calc(33.333% - 1.33rem);
+      min-width: 200px;
     }
 
     .author-name {
@@ -71,9 +68,22 @@
     }
 
     /* 响应式设计 */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       .author-row {
-        max-width: 100%;
+        width: calc(50% - 1rem);
+        min-width: 180px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .authors-container {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .author-row {
+        width: 100%;
+        max-width: 400px;
         padding: 0.3rem 1rem;
       }
 
